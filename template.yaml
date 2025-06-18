@@ -136,8 +136,7 @@ spec:
       name: Publish
       action: publish:gitlab
       input:
-        repoUrl: ${{ parameters.repo.host }}?owner=${{ parameters.username
-          }}&repo=${{parameters.component_id}}
+        repoUrl: ${{ parameters.repo.host }}?owner=${{ parameters.username }}&repo=${{parameters.component_id}}
         repoVisibility: public
         defaultBranch: main
         sourcePath: ./${{ parameters.username }}-${{parameters.component_id}}
@@ -155,10 +154,8 @@ spec:
         copyWithoutTemplating: []
         values:
           component_id: ${{ parameters.component_id }}
-          source_repository_gitops: https://${{ parameters.repo.host }}/${{
-            parameters.username }}/${{parameters.component_id}}-gitops.git
-          source_repository: https://${{ parameters.repo.host }}/${{
-            parameters.username }}/${{parameters.component_id}}.git
+          source_repository_gitops: https://${{ parameters.repo.host }}/${{ parameters.username }}/${{parameters.component_id}}-gitops.git
+          source_repository: https://${{ parameters.repo.host }}/${{ parameters.username }}/${{parameters.component_id}}.git
           owner: ${{ parameters.username }}
           namespace: ${{ parameters.username }}-${{ parameters.component_id }}-dev
           image_registry: ${{ parameters.image_registry }}
@@ -177,8 +174,7 @@ spec:
       name: Publishing to Resource Repository
       action: publish:gitlab
       input:
-        repoUrl: ${{ parameters.repo.host }}?owner=${{ parameters.username
-          }}&repo=${{parameters.component_id}}-gitops
+        repoUrl: ${{ parameters.repo.host }}?owner=${{ parameters.username }}&repo=${{parameters.component_id}}-gitops
         repoVisibility: public
         defaultBranch: main
         title: gitops resources for ${{ parameters.component_id }}
