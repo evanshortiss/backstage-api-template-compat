@@ -131,7 +131,7 @@ spec:
           destination: ${{ parameters.username }}/${{ parameters.component_id }}
           port: 8080
           gitops_namespace: rhdh-gitops
-        targetPath: ./${{ parameters.username }}-${{parameters.component_id}}
+        targetPath: ./source
     - id: publish
       name: Publish
       action: publish:gitlab
@@ -139,7 +139,7 @@ spec:
         repoUrl: ${{ parameters.repo.host }}?owner=${{ parameters.username }}&repo=${{parameters.component_id}}
         repoVisibility: public
         defaultBranch: main
-        sourcePath: ./${{ parameters.username }}-${{parameters.component_id}}
+        sourcePath: ./source
     - id: register
       name: Register
       action: catalog:register
